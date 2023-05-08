@@ -4,16 +4,16 @@ HOST = '127.0.0.1'
 PORT = 65000
 
 dicionario = {
-    'gato' : 'cat',
-    'cachorro' : 'dog',
-    'laranja' : 'orange',
-    'uva' : 'grape',
-    'azul' : 'blue',
-    'vermelho' : 'red',
-    'verde' : 'green',
-    'roxo' : 'purple',
-    'amarelo' : 'yellow',
-    'comida' : 'food'
+    'propagação' : 'propagation',
+    'rede' : 'network',
+    'enlace' : 'link',
+    'aplicação' : 'application',
+    'transporte' : 'transport',
+    'atraso' : 'delay',
+    'roteador' : 'router',
+    'pacote' : 'packet',
+    'protocolo' : 'protocol',
+    'hospedeiro' : 'host'
 }
 
 def run_server():

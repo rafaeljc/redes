@@ -5,17 +5,16 @@ HOST = '127.0.0.1'
 PORT = 65000
 
 palavras = [
-    'gato',
-    'cachorro',
-    'laranja',
-    'uva',
-    'azul',
-    'vermelho',
-    'verde',
-    'roxo',
-    'amarelo',
-    'comida',
-    'carro'
+    'propagação',
+    'rede',
+    'enlace',
+    'aplicação',
+    'transporte',
+    'atraso',
+    'roteador',
+    'pacote',
+    'protocolo',
+    'hospedeiro'
 ]
 
 def run_client():
@@ -27,7 +26,7 @@ def run_client():
         traducao, end_servidor = s.recvfrom(1024)
         traducao = traducao.decode()
         if traducao == '!ERRO':
-            print('Não existe tradução para essa palavra')
+            print('O servidor não reconhece essa palavra.')
         else:
             print(f'A tradução é: {traducao}')
 

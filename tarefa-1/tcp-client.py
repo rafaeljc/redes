@@ -5,17 +5,16 @@ HOST = '127.0.0.1'
 PORT = 65000
 
 palavras = [
-    'gato',
-    'cachorro',
-    'laranja',
-    'uva',
-    'azul',
-    'vermelho',
-    'verde',
-    'roxo',
-    'amarelo',
-    'comida',
-    'carro'
+    'propagação',
+    'rede',
+    'enlace',
+    'aplicação',
+    'transporte',
+    'atraso',
+    'roteador',
+    'pacote',
+    'protocolo',
+    'hospedeiro'
 ]
 
 def run_client():
