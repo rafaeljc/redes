@@ -28,7 +28,7 @@ def run_client():
         traducao = s.recv(1024)
         traducao = traducao.decode()
         if traducao == '!ERRO':
-            print('Não existe tradução para essa palavra')
+            print('O servidor não reconhece essa palavra.')
         else:
             print(f'A tradução é: {traducao}')
 

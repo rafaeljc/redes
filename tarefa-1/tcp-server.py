@@ -18,22 +18,21 @@ dicionario = {
 
 def run_server():
     print('Servidor TCP iniciado')
-    while True:
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.bind((HOST, PORT))
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind((HOST, PORT))
+        while True:
             s.listen()
-            conn, addr = s.accept()
-            with conn:
-                print(f'Conexão estabelecida {addr}')
-                while True:
-                    data = conn.recv(1024)
-                    if not data:
-                        break
-                    traducao = dicionario.get(data.decode())
-                    if traducao:
-                        conn.sendall(traducao.encode())
-                    else:
-                        conn.sendall(b'!ERRO')
+            conexao, end_cliente = s.accept()
+            with conexao:
+                print(f'Conexão estabelecida {end_cliente}')
+                data = conexao.recv(1024)
+                if not data:
+                    break
+                traducao = dicionario.get(data.decode())
+                if traducao:
+                    conexao.sendall(traducao.encode())
+                else:
+                    conexao.sendall(b'!ERRO')
 
 def main():
     run_server()
