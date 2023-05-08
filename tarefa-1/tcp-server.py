@@ -26,8 +26,6 @@ def run_server():
             with conexao:
                 print(f'Conexão estabelecida {end_cliente}')
                 data = conexao.recv(1024)
-                if not data:
-                    break
                 traducao = dicionario.get(data.decode())
                 if traducao:
                     conexao.sendall(traducao.encode())
