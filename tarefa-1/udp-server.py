@@ -18,11 +18,10 @@ dicionario = {
 
 def run_server():
     print('Servidor UDP iniciado')
-    while True:
-        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-            s.bind(('', PORT))
-            palavra, end_cliente = s.recvfrom(1024)
-            
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+        s.bind(('', PORT))
+        while True:
+            palavra, end_cliente = s.recvfrom(1024)            
             traducao = dicionario.get(palavra.decode())
             if traducao:
                 s.sendto(traducao.encode(), end_cliente)

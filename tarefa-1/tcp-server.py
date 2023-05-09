@@ -20,8 +20,8 @@ def run_server():
     print('Servidor TCP iniciado')
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((HOST, PORT))
-        while True:
-            s.listen()
+        s.listen()
+        while True:            
             conexao, end_cliente = s.accept()
             with conexao:
                 print(f'Conexão estabelecida {end_cliente}')
